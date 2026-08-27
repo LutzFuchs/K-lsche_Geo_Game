@@ -2,8 +2,8 @@
  * Single-file customization surface for the day of the event.
  * Update the meeting point details + flag here without touching app logic.
  */
-export const finalMeetingPointName = 'Augustiner Keller'
-export const finalMeetingPointAddress = 'Arnulfstraße 52, 80335 München'
+export const finalMeetingPointName = 'Ziel'
+export const finalMeetingPointAddress = 'Gneisenaustraße 17, 50733 Köln'
 export const finalMeetingPointMapsUrl =
   'https://www.google.com/maps/search/?api=1&query=' +
   encodeURIComponent(`${finalMeetingPointName}, ${finalMeetingPointAddress}`)
