@@ -1,109 +1,83 @@
 import type { Station } from './types'
 
 /**
- * Stations are processed strictly in array order. Reorder, remove, or insert
- * freely — app logic reads `stations.length` and `stations[currentIndex]`,
- * never hardcoded indexes.
- *
- * Route (6 stops, Odeonsplatz → Marienplatz):
- *   Odeonsplatz · Hofgarten · Residenz · Platzl/Hofbräuhaus ·
- *   Viktualienmarkt · Marienplatz
- *
- * Coordinates are approximate Munich centroids; radii are intentionally
- * generous (60–80 m) to absorb urban GPS drift between buildings.
- *
- * Player-visible copy is German. Answers are accepted case-insensitively
- * after `.trim()` and ignore umlaut variants ("LOWE" passes "LÖWE").
+ * Route (5 Stopps, Escher Str. 30 → Gneisenaustr. 17, Köln-Nippes):
+ *   St. Joseph · Lutherkirche · Café Wölkchen · Wilhelmplatz · Haus Schnackertz
  */
 export const stations: Station[] = [
   {
-    id: 'odeonsplatz',
-    title: 'Der erste Datenpunkt',
-    locationName: 'Odeonsplatz',
-    lat: 48.1426,
-    lng: 11.5773,
-    radiusMeters: 70,
+    id: 'st-joseph',
+    title: 'Der stille Wächter',
+    locationName: 'St. Joseph Kirche',
+    lat: 50.9572581,
+    lng: 6.9447206,
+    radiusMeters: 60,
     story:
-      'Die Nachricht aktiviert sich nur am richtigen Ort. Der Architekt glaubte: Jede Stadt beginnt dort, wo Macht, Bewegung und Geschichte sich kreuzen. Hier setzte er den ersten Datenpunkt.',
+      'Kurz nach dem Start führt der Weg an einer Kirche vorbei, die einem stillen Handwerker gewidmet ist.',
     riddle:
-      'Zwei steinerne Wächter flankieren seit über hundert Jahren die Freitreppe der Feldherrnhalle. Welches Wappentier stellen sie dar?',
-    hint: 'Bayerns Wappentier — es ziert unzählige Stadtwappen.',
-    answer: 'LÖWE',
-    badge: 'Löwe',
+      'Der Namenspatron dieser Kirche war im Neuen Testament Zimmermann und Ehemann einer besonderen Frau. Wie hieß seine Frau?',
+    hint: 'Sie gilt als Mutter Jesu.',
+    answer: 'MARIA',
+    badge: 'Werkzeug',
   },
   {
-    id: 'hofgarten',
-    title: 'Das stille Zentrum',
-    locationName: 'Hofgarten',
-    lat: 48.1432,
-    lng: 11.5793,
-    radiusMeters: 80,
+    id: 'lutherkirche',
+    title: 'Die 95 Thesen',
+    locationName: 'Lutherkirche',
+    lat: 50.9617061,
+    lng: 6.9490506,
+    radiusMeters: 60,
     story:
-      'Hier verklingt der Lärm. Der Architekt glaubte: Städte versteht man nicht nur durch Bewegung, sondern auch durch Pausen.',
+      'Diese Kirche trägt den Namen eines Mannes, der die Kirche für immer verändert hat.',
     riddle:
-      'Dem Pavillon im Zentrum des Gartens ist eine römische Göttin gewidmet. Wie heißt sie?',
-    hint: 'Göttin der Jagd.',
-    answer: 'DIANA',
-    badge: 'Pavillon',
+      'Er schlug 1517 seine 95 Thesen an die Tür der Wittenberger Schlosskirche und löste damit die Reformation aus. Wie lautet sein Vorname?',
+    hint: 'Auch eine Rose ist nach ihm benannt.',
+    answer: 'MARTIN',
+    badge: 'Feder',
   },
   {
-    id: 'residenz',
-    title: 'Das Zeichen der Macht',
-    locationName: 'Residenz / Max-Joseph-Platz',
-    lat: 48.1394,
-    lng: 11.5772,
-    radiusMeters: 70,
+    id: 'cafe-woelkchen',
+    title: 'Etwas Flauschiges',
+    locationName: 'Café Wölkchen',
+    lat: 50.9624790,
+    lng: 6.9511988,
+    radiusMeters: 50,
     story:
-      'Städte werden ebenso von Herrschern wie von Baumeistern geformt. Hier hinterlegte der Architekt Symbole von Autorität und Ordnung.',
+      'Der Name dieses Cafés erinnert an etwas Weiches, das hoch am Himmel schwebt.',
     riddle:
-      'Welches Herrschergeschlecht ließ die Residenz errichten und regierte Bayern über Jahrhunderte?',
-    hint: 'Die bayerische Königsdynastie.',
-    answer: 'WITTELSBACH',
+      'Wonach ist dieses Café benannt — ein flauschiges Gebilde, das man bei schönem Wetter am Himmel sieht?',
+    hint: 'Verkleinerungsform von etwas, das vor Regen warnt.',
+    answer: 'WOLKE',
+    badge: 'Wölkchen',
+  },
+  {
+    id: 'wilhelmplatz',
+    title: 'Der letzte Kaiser',
+    locationName: 'Wilhelmplatz',
+    lat: 50.9631139,
+    lng: 6.9523664,
+    radiusMeters: 60,
+    story:
+      'Dieser Platz trägt den Namen eines deutschen Monarchen, dessen Herrschaft mit dem Ende des Kaiserreichs 1918 endete.',
+    riddle:
+      'Wie lautet der Vorname des letzten deutschen Kaisers, der von 1888 bis 1918 regierte?',
+    hint: 'Er dankte nach dem Ersten Weltkrieg ab und ging ins Exil.',
+    answer: 'WILHELM',
     badge: 'Krone',
   },
   {
-    id: 'platzl',
-    title: 'Der Geschmack der Stadt',
-    locationName: 'Platzl / Hofbräuhaus',
-    lat: 48.1376,
-    lng: 11.5798,
-    radiusMeters: 70,
+    id: 'haus-schnackertz',
+    title: 'Kölsche Tradition',
+    locationName: 'Haus Schnackertz',
+    lat: 50.9643172,
+    lng: 6.9561485,
+    radiusMeters: 50,
     story:
-      'Der Architekt wusste: Eine Stadt schmeckt man, bevor man sie versteht. Am Platzl mischten sich über Jahre Bierdunst, Gewürze und Geschichten zu einer eigenen Sprache.',
+      'Fast am Ziel wartet ein Traditionshaus, das echtes Kölsch ausschenkt — das Bier, das nur im Kölner Raum so heißen darf.',
     riddle:
-      'Welcher Münchner Sternekoch betrieb hier am Platzl jahrelang seine Kochschule und ein ganzes Genuss-Imperium? (Nachname genügt)',
-    hint: 'Berühmt für seine Gewürzmischungen.',
-    answer: 'SCHUHBECK',
-    badge: 'Kochlöffel',
-  },
-  {
-    id: 'viktualienmarkt',
-    title: 'Die Stimme des Marktes',
-    locationName: 'Viktualienmarkt',
-    lat: 48.1351,
-    lng: 11.5762,
-    radiusMeters: 70,
-    story:
-      'Identität lebt im Alltag, nicht in Denkmälern. Zwischen Ständen und Brunnen hörte der Architekt nicht auf Statuen, sondern auf das Lachen der Münchner.',
-    riddle:
-      'Ein Brunnen am Markt ehrt einen legendären Münchner Komiker mit Melone und langer Nase. Wie hieß er? (Nachname genügt)',
-    hint: 'Münchner Komikerlegende, Partner von Liesl Karlstadt.',
-    answer: 'VALENTIN',
-    badge: 'Maibaum',
-  },
-  {
-    id: 'marienplatz',
-    title: 'Die Wächter der Säule',
-    locationName: 'Marienplatz',
-    lat: 48.1374,
-    lng: 11.5755,
-    radiusMeters: 70,
-    story:
-      'Im Herzen der Stadt steht eine goldene Säule. Zu ihren Füßen ringen steinerne Figuren mit den alten Plagen — ein Code aus Stein, den der Architekt nicht zufällig wählte.',
-    riddle:
-      'Am Fuß der Mariensäule kämpfen vier Putten gegen Bestien. Welches geflügelte Fabeltier verkörpert dort die Pest?',
-    hint: 'Ein Hahn-Schlangen-Wesen der Sage.',
-    answer: 'BASILISK',
-    badge: 'Wasser',
+      'Wie heißt das schlanke, 0,2-Liter-Glas, aus dem Kölsch traditionell serviert wird?',
+    hint: 'Es ist deutlich schmaler als ein normales Bierglas.',
+    answer: 'STANGE',
+    badge: 'Glas',
   },
 ]
