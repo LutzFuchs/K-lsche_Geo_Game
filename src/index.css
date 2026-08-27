@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Chakra Petch", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --font-mono: "Chakra Petch", ui-monospace, Consolas, monospace;
+
+  /* Editorial paper tones for narrative surfaces */
+  --color-paper: #f5f1e8;
+  --color-paper-dim: #ebe4d2;
+  --color-ink: #0a0a0a;
+  --color-rule: #1a1a1a;
+  --color-muted: #6b6356;
+
+  /* Game / Munich-heraldic accents */
+  --color-tomato: #e04127;       /* hot CTA + energy */
+  --color-tomato-deep: #b32a13;
+  --color-sapphire: #1e40af;     /* cool team / leaderboard */
+  --color-gold: #c9a35a;         /* trophy / podium */
+  --color-silver: #b9bdc7;
+  --color-bronze: #a16933;
+  --color-night: #0e1116;        /* HUD chrome */
+  --color-night-soft: #1a1f29;
+  --color-success: #2f8f5b;
+  --color-warning: #d97706;
+}
+
+html, body, #root {
+  height: 100%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+button {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+input, textarea {
+  font-family: inherit;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Game animations */
+@keyframes solve-burst {
+  0%   { transform: scale(0.6); opacity: 0; }
+  60%  { transform: scale(1.08); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+@keyframes pop {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+@keyframes float-up {
+  0%   { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+.solve-burst { animation: solve-burst 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
+.pop         { animation: pop 0.4s ease both; }
+.float-up    { animation: float-up 0.5s ease both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .solve-burst, .pop, .float-up { animation: none !important; }
+}
+
+@media (prefers-color-scheme: dark) {
+  html, body, #root {
+    background: #0c0b09;
+    color: #f5f1e8;
+  }
+}

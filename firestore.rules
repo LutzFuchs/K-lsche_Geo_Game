@@ -1,0 +1,10 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Public leaderboard: any client can register/update their own team doc.
+    match /teams/{teamId} {
+      allow read: if true;
+      allow create, update: if true;
+    }
+  }
+}

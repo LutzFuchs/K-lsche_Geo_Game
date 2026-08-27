@@ -1,0 +1,40 @@
+server {
+  listen       ${PORT};
+  listen       [::]:${PORT};
+  server_name  _;
+
+  root   /usr/share/nginx/html;
+  index  index.html;
+
+  # SPA fallback — every unknown path serves index.html so client-side state
+  # picks up where the user left off via localStorage.
+  location / {
+    try_files $uri $uri/ /index.html;
+  }
+
+  # Hashed asset filenames are immutable; cache aggressively.
+  location ~* \.(?:js|css|woff2?|svg|png|jpg|jpeg|gif|webp|ico)$ {
+    expires 30d;
+    add_header Cache-Control "public, max-age=2592000, immutable";
+    try_files $uri =404;
+  }
+
+  # The HTML shell must always be revalidated so we can ship hot copy fixes
+  # mid-event without a stale cache trapping participants on old text.
+  location = /index.html {
+    add_header Cache-Control "no-store, must-revalidate";
+    expires off;
+  }
+
+  # Cloud Run sends health checks; keep them cheap.
+  location = /healthz {
+    access_log off;
+    return 200 "ok\n";
+    add_header Content-Type text/plain;
+  }
+
+  gzip            on;
+  gzip_vary       on;
+  gzip_min_length 1024;
+  gzip_types      text/plain text/css application/javascript application/json image/svg+xml;
+}
