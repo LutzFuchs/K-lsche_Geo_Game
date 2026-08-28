@@ -25,7 +25,7 @@ export const testModePassword = 'luca1234'
  * 14:45 UTC. Staggering team starts is handled manually on the day, not
  * by the app.
  */
-export const raceStartAt = new Date('2026-09-05')
+export const raceStartAt = new Date('2026-09-05T19:00:00Z')
 
 /** True once raceStartAt has passed, or immediately if test mode is on. */
 export function teamGateOpen(testModeEnabled: boolean, now: number = Date.now()): boolean {
