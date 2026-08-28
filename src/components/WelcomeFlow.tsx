@@ -112,10 +112,10 @@ function NameStep({
         Köln · {RACE_DATE_SHORT} · {RACE_TIME}
       </p>
       <h1 className="font-display text-3xl sm:text-4xl font-black leading-[1.05] tracking-tight text-center mb-2">
-        Die letzte Nachricht des Stadtarchitekten
+        Nippeser Stadtrallye
       </h1>
       <p className="text-center text-base text-muted mb-6">
-        Sechs Stationen. 60 Minuten. Eine Stadt voller Hinweise.
+        Fünf Stationen. 60 Minuten. Ein Veedel voller Hinweise.
       </p>
 
       <div className="mt-auto">
@@ -274,7 +274,7 @@ function LobbyStep({
         <div className="space-y-4 text-sm mb-8 flex-1 overflow-y-auto">
           <div>
             <p className="font-bold text-tomato mb-1">Die Mission</p>
-            <p className="text-muted">6 Stationen. Löst Rätsel und findet die Antworten. Der Timer startet, sobald ihr auf GO tippt.</p>
+            <p className="text-muted">5 Stationen. Löst Rätsel und findet die Antworten. Der Timer startet, sobald ihr auf GO tippt.</p>
           </div>
 
           <div>
@@ -406,7 +406,7 @@ function LobbyStep({
       )}
 
       <ul className="space-y-2 text-sm text-muted mb-6">
-        <BulletItem>6 Stationen · auto-freischaltend per GPS</BulletItem>
+        <BulletItem>5 Stationen · auto-freischaltend per GPS</BulletItem>
         <BulletItem>Höchste Punktzahl gewinnt</BulletItem>
         <BulletItem>Live-Tabelle mit allen Teams</BulletItem>
       </ul>
