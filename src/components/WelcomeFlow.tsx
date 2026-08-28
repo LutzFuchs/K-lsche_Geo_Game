@@ -109,7 +109,7 @@ function NameStep({
       </div>
 
       <p className="text-center font-sans uppercase tracking-[0.3em] text-xs font-semibold text-tomato mb-3">
-        München · {RACE_DATE_SHORT} · {RACE_TIME}
+        Köln · {RACE_DATE_SHORT} · {RACE_TIME}
       </p>
       <h1 className="font-display text-3xl sm:text-4xl font-black leading-[1.05] tracking-tight text-center mb-2">
         Die letzte Nachricht des Stadtarchitekten
