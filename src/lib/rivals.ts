@@ -1,16 +1,16 @@
 import type { RivalTeam } from '../types'
 
 const RIVAL_NAMES = [
-  'Die Spätzle-Squad',
-  'Brezn-Bande',
-  'Isar-Wölfe',
-  'Maßkrug-Mafia',
-  'Glockenspiel-Gang',
-  'Rathaus-Rebellen',
-  'Marien-Meute',
-  'Föhn-Brigade',
-  'Frauenkirche-Funken',
-  'Englischer-Garten-Geister',
+  'Kölsch-Kommando',
+  'Domspitzen-Gang',
+  'Rheinauen-Rebellen',
+  'Kwatta-Bande',
+  'Hänneschen-Helden',
+  'Altstadt-Adler',
+  'Zoch-Zoccis',
+  'Höhner-Horde',
+  'Veedel-Vagabunden',
+  'Rheinblitz',
 ]
 
 /** Mulberry32 PRNG — tiny, deterministic, good enough for this. */
