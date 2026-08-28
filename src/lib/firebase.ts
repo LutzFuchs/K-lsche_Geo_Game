@@ -34,7 +34,7 @@ export type LeaderboardEntry = {
 }
 
 export async function registerTeam(teamId: string, teamName: string, photoUrl?: string) {
-  const teamsRef = collection(db, 'teams')
+  const teamsRef = collection(db, 'teams_koeln')
   await setDoc(doc(teamsRef, teamId), {
     teamId,
     teamName,
@@ -46,7 +46,7 @@ export async function registerTeam(teamId: string, teamName: string, photoUrl?: 
 }
 
 export async function updateTeamScore(teamId: string, score: number, solvedCount: number) {
-  const teamsRef = collection(db, 'teams')
+  const teamsRef = collection(db, 'teams_koeln')
   await setDoc(
     doc(teamsRef, teamId),
     {
@@ -59,14 +59,14 @@ export async function updateTeamScore(teamId: string, score: number, solvedCount
 }
 
 export async function fetchLeaderboard(): Promise<LeaderboardEntry[]> {
-  const teamsRef = collection(db, 'teams')
+  const teamsRef = collection(db, 'teams_koeln')
   const q = query(teamsRef, orderBy('score', 'desc'), limit(100))
   const snapshot = await getDocs(q)
   return snapshot.docs.map((doc) => doc.data() as LeaderboardEntry)
 }
 
 export async function getTeam(teamId: string): Promise<LeaderboardEntry | null> {
-  const teamsRef = collection(db, 'teams')
+  const teamsRef = collection(db, 'teams_koeln')
   const snapshot = await getDoc(doc(teamsRef, teamId))
   return snapshot.exists() ? (snapshot.data() as LeaderboardEntry) : null
 }
