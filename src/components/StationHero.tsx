@@ -17,7 +17,7 @@
 
 import { useState } from 'react'
 
-const USE_BITMAP_HEROES = true
+const USE_BITMAP_HEROES = false
 const VB = '0 0 600 280'
 
 // Station ids whose bitmap failed to load this session — fall back to the SVG.
