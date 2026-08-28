@@ -387,7 +387,7 @@ function LobbyStep({
           </p>
           <Countdown target={raceStartAt} />
           <p className="mt-4 text-sm opacity-95">
-            Die Mission beginnt um {RACE_TIME} Uhr. Trefft euch am Bierbrunnen.
+            Die Mission beginnt um {RACE_TIME} Uhr. Los Geht's!
           </p>
         </section>
       ) : (
