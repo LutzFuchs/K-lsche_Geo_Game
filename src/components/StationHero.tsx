@@ -552,7 +552,7 @@ export function MunichSkyline(_props: SceneProps) {
   if (USE_BITMAP_HEROES) {
     return (
       <img
-        src="/heroes/koeln-skyline.png"
+        src="/heroes/koeln-skyle.png"
         alt=""
         loading="eager"
         decoding="async"
