@@ -1,6 +1,7 @@
 import { useMemo } from 'react'
 import {
   finalMeetingPointAddress,
+  finalMeetingPointHint,
   finalMeetingPointMapsUrl,
   finalMeetingPointName,
   showMeetingPoint,
@@ -131,7 +132,9 @@ export function Final({ state, stations, rivals, teamId, onReset }: Props) {
             Abendlicher Treffpunkt freigeschaltet
           </p>
           {showMeetingPoint ? (
-            <a
+            <>
+              <p className="text-sm italic text-muted mb-2">{finalMeetingPointHint}</p>
+              <a
               href={finalMeetingPointMapsUrl}
               target="_blank"
               rel="noopener noreferrer"
@@ -150,6 +153,7 @@ export function Final({ state, stations, rivals, teamId, onReset }: Props) {
               </span>
               <PinGlyph size={32} />
             </a>
+            </>
           ) : (
             <p className="font-display text-lg italic text-muted">
               Euer Ziel wird bald enthüllt.
