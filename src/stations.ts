@@ -1,74 +1,82 @@
 import type { Station } from './types'
 
 /**
- * Route (5 Stopps, Escher Str. 30 → Gneisenaustr. 17, Köln-Nippes):
- *   St. Joseph · Lutherkirche · Café Wölkchen · Wilhelmplatz · Haus Schnackertz
+ * Route (6 Stopps, Escher Str. 30 → Gneisenaustr. 17, Köln-Nippes):
+ *   St. Joseph · Radlager · Café Wölkchen · Wilhelmplatz · Haus Schnackertz · Ziel
+ *
+ * `locationHint` wird angezeigt, solange die Station noch NICHT erreicht ist.
+ * `locationName` erscheint erst danach — Teams müssen den Ort selbst erraten.
  */
 export const stations: Station[] = [
   {
     id: 'st-joseph',
     title: 'Der stille Wächter',
     locationName: 'St. Joseph Kirche',
+    locationHint: 'Geht zur nächsten Kirche, die den Namen von Jesus Vater trägt',
     lat: 50.9572581,
     lng: 6.9447206,
     radiusMeters: 60,
     story:
-      'Kurz nach dem Start führt der Weg an einer Kirche vorbei, die einem stillen Handwerker gewidmet ist.',
+      'Ihr steht vor einer Kirche im Herzen des Veedels. Bevor es weitergeht, verlangt der Ort ein Stück kölsche Lebensweisheit von euch.',
     riddle:
-      'Der Namenspatron dieser Kirche war im Neuen Testament Zimmermann und Ehemann einer besonderen Frau. Wie hieß seine Frau?',
-    hint: 'Sie gilt als Mutter Jesu.',
-    answer: 'MARIA',
-    badge: 'Werkzeug',
+      'Es gibt sie seit Jahrzehnten, und jede Kölnerin und jeder Kölner kennt mindestens eines davon auswendig: die kölschen Grundgesetze. Wie viele gibt es insgesamt?',
+    hint: 'Artikel 1 lautet: „Et is, wie et is."',
+    answer: 'ELF',
+    badge: 'Kirchturm',
   },
   {
-    id: 'lutherkirche',
-    title: 'Die 95 Thesen',
-    locationName: 'Lutherkirche',
-    lat: 50.9617061,
-    lng: 6.9490506,
-    radiusMeters: 60,
+    id: 'radlager',
+    title: 'Zwei Räder, ein Ziel',
+    locationName: 'Radlager',
+    locationHint: 'Wo bekommt man hier gute Zweiräder her?',
+    lat: 50.9599843,
+    lng: 6.9494099,
+    radiusMeters: 50,
     story:
-      'Diese Kirche trägt den Namen eines Mannes, der die Kirche für immer verändert hat.',
+      'Zwischen Schläuchen, Sätteln und Speichen wartet die nächste Frage – natürlich mit kölschem Bezug zum Wasser nebenan.',
     riddle:
-      'Er schlug 1517 seine 95 Thesen an die Tür der Wittenberger Schlosskirche und löste damit die Reformation aus. Wie lautet sein Vorname?',
-    hint: 'Auch eine Rose ist nach ihm benannt.',
-    answer: 'MARTIN',
-    badge: 'Feder',
+      'Viele Kölner Radtouren führen an einem berühmten Fluss entlang, der die Stadt in zwei Hälften teilt. Wie heißt dieser Fluss?',
+    hint: 'Auf der einen Seite die Altstadt, auf der anderen "Schäl Sick".',
+    answer: 'RHEIN',
+    badge: 'Fahrrad',
   },
   {
     id: 'cafe-woelkchen',
     title: 'Etwas Flauschiges',
     locationName: 'Café Wölkchen',
+    locationHint: 'Wo haben Henry und Niklas schon mal Geburtstag gefeiert?',
     lat: 50.9624790,
     lng: 6.9511988,
     radiusMeters: 50,
     story:
-      'Der Name dieses Cafés erinnert an etwas Weiches, das hoch am Himmel schwebt.',
+      'Bei Kaffee und Kuchen wartet ein Rätsel über das bekannteste Wahrzeichen der Stadt.',
     riddle:
-      'Wonach ist dieses Café benannt — ein flauschiges Gebilde, das man bei schönem Wetter am Himmel sieht?',
-    hint: 'Verkleinerungsform von etwas, das vor Regen warnt.',
-    answer: 'WOLKE',
+      'Es hat zwei markante Türme, ist Weltkulturerbe und das Wahrzeichen der Stadt Köln schlechthin. Wie heißt dieses Bauwerk?',
+    hint: 'Er ist die meistbesuchte Sehenswürdigkeit Deutschlands.',
+    answer: 'DOM',
     badge: 'Wölkchen',
   },
   {
     id: 'wilhelmplatz',
-    title: 'Der letzte Kaiser',
+    title: 'Marktplatz des Veedels',
     locationName: 'Wilhelmplatz',
+    locationHint: 'Wo ist der Nippeser Markt?',
     lat: 50.9631139,
     lng: 6.9523664,
     radiusMeters: 60,
     story:
-      'Dieser Platz trägt den Namen eines deutschen Monarchen, dessen Herrschaft mit dem Ende des Kaiserreichs 1918 endete.',
+      'Mitten auf dem Platz, zwischen Marktständen und Kölschem Geplauder, wartet die nächste Frage zu eurem Standort.',
     riddle:
-      'Wie lautet der Vorname des letzten deutschen Kaisers, der von 1888 bis 1918 regierte?',
-    hint: 'Er dankte nach dem Ersten Weltkrieg ab und ging ins Exil.',
-    answer: 'WILHELM',
-    badge: 'Krone',
+      'In welchem Kölner Stadtteil (auf Kölsch auch "Veedel" genannt) befindet ihr euch gerade?',
+    hint: 'Der Stadtteil grenzt an Ehrenfeld und ist für seinen Wochenmarkt bekannt.',
+    answer: 'NIPPES',
+    badge: 'Marktkorb',
   },
   {
     id: 'haus-schnackertz',
     title: 'Kölsche Tradition',
     locationName: 'Haus Schnackertz',
+    locationHint: 'Wo gibt es seit 1912 leckeres Essen, wo man zuerst durch eine bronzene Tür muss',
     lat: 50.9643172,
     lng: 6.9561485,
     radiusMeters: 50,
@@ -78,6 +86,6 @@ export const stations: Station[] = [
       'Wie heißt das schlanke, 0,2-Liter-Glas, aus dem Kölsch traditionell serviert wird?',
     hint: 'Es ist deutlich schmaler als ein normales Bierglas.',
     answer: 'STANGE',
-    badge: 'Glas',
+    badge: 'Stange',
   },
 ]
