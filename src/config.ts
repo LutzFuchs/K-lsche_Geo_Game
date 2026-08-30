@@ -4,6 +4,8 @@
  */
 export const finalMeetingPointName = 'Ziel'
 export const finalMeetingPointAddress = 'Gneisenaustraße 17, 50733 Köln'
+/** Cryptic clue shown ABOVE the address on the final screen — no answer needed, just flavor. */
+export const finalMeetingPointHint = 'Wo war hier einst der beste Handwerksbetrieb Kölns?'
 export const finalMeetingPointMapsUrl =
   'https://www.google.com/maps/search/?api=1&query=' +
   encodeURIComponent(`${finalMeetingPointName}, ${finalMeetingPointAddress}`)
@@ -25,7 +27,7 @@ export const testModePassword = 'luca1234'
  * 14:45 UTC. Staggering team starts is handled manually on the day, not
  * by the app.
  */
-export const raceStartAt = new Date('2026-08-05T19:00:00Z')
+export const raceStartAt = new Date('2026-07-07T14:45:00Z')
 
 /** True once raceStartAt has passed, or immediately if test mode is on. */
 export function teamGateOpen(testModeEnabled: boolean, now: number = Date.now()): boolean {
