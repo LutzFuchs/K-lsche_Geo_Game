@@ -179,7 +179,7 @@ export function StationView({
                 {station.title}
               </h1>
               <p className="text-[11px] uppercase tracking-widest font-bold opacity-90 mt-0.5">
-                {station.locationName}
+                {isLocked ? station.locationHint : station.locationName}
               </p>
             </div>
             <div className="shrink-0 text-paper">
@@ -270,7 +270,7 @@ function LockedBlock({
             Verschlossen
           </p>
           <p className="font-display text-xl font-bold leading-snug">
-            Geht zu {station.locationName}.
+            {station.locationHint}
           </p>
           <p className="text-sm text-muted mt-1">
             Die nächste Nachricht öffnet sich, sobald ihr dort seid.
