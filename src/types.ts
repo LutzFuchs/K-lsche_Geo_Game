@@ -2,6 +2,8 @@ export type Station = {
   id: string
   title: string
   locationName: string
+  /** Cryptic clue shown BEFORE the station is reached — never the real name. */
+  locationHint: string
   lat: number
   lng: number
   radiusMeters: number
